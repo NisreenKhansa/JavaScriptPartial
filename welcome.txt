@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Learn with Nisreen</title>
+  <style>
+    body {
+      background-color: #f0f0f0; /* Light grey background color */
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 36px;
+      font-weight: bold;
+      font-style: italic;
+      color: purple;
+    }
+
+    .welcome-message {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .welcome-message p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Welcome to Learn with Nisreen</h1>
+
+<div class="welcome-message">
+  <p>Thank you for submitting your information. We're excited to have you on board!</p>
+  <p>Stay tuned for upcoming classes and updates.</p>
+</div>
+
+</body>
+</html>

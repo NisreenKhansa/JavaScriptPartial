@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Learn with Nisreen</title>
+  <style>
+    body {
+      background-color: #f0f0f0; /* Light grey background color */
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 36px;
+      font-weight: bold;
+      font-style: italic;
+      color: purple;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Learn with Nisreen</h1>
+
+<form id="registrationForm">
+  <label for="initialName">Initial Name:</label>
+  <input type="text" id="initialName" required>
+  <span class="error" id="initialnameError"></span>
+
+  <label for="fathersName">Father's Name:</label>
+  <input type="text" id="fathersName" required>
+  <span class="error" id="father'sNameError"></span>
+
+  <label for="familyName">Family Name:</label>
+  <input type="text" id="familyName" required>
+ <span class="error" id="familyNameError"></span>
+
+  <label for="birth">Birth:</label>
+  <input type="date" id="birth" required>
+  <span class="error" id="birthError"></span>
+
+  <label for="gender">Gender:</label>
+  <select id="gender" required>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+  </select>
+
+  <label for="class">Class:</label>
+  <input type="text" id="class" required>
+  <span class="error" id="classError"></span>
+
+  <label for="date">Date:</label>
+  <input type="date" id="date" required>
+  <span class="error" id="dateError"></span>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" required>
+  <span class="error" id="emailError"></span>
+
+  <label for="phoneNumber">Phone Number:</label>
+  <input type="tel" id="phoneNumber" pattern="[0-9]{8}" required>
+  <span class="error" id="phoneError"></span>
+
+  <label for="profilePicture">Profile Picture:</label>
+  <input type="file" id="profilePicture">
+  <span class="error" id="proflePictureError"></span>
+
+  <button type="button" onclick="validateForm()">Submit</button>
+</form>
+
+<script>
+  <script>
+  function validateForm() {
+    // Get references to the input fields
+    var initialName = document.getElementById("initialName").value;
+    var fathersName = document.getElementById("fathersName").value;
+    var familyName = document.getElementById("familyName").value;
+    var birth = document.getElementById("birth").value;
+    var gender = document.getElementById("gender").value;
+    var classVal = document.getElementById("class").value;
+    var date = document.getElementById("date").value;
+    var email = document.getElementById("email").value;
+    var phoneNumber = document.getElementById("phoneNumber").value;
+
+    // Check if any required field is empty
+    if (
+      initialName === "" ||
+      fathersName === "" ||
+      familyName === "" ||
+      birth === "" ||
+      gender === "" ||
+      classVal === "" ||
+      date === "" ||
+      email === "" ||
+      phoneNumber === ""
+    ) {
+      alert("Please Fill All Required Information");
+      return;
+    }
+
+    // Validate phone number
+    if (phoneNumber.length !== 8) {
+      document.getElementById("phoneError").innerHTML = "Phone number must be 8 digits";
+      return;
+    } else {
+      document.getElementById("phoneError").innerHTML = "";
+    }
+
+    // Validate email domain
+    if (!email.endsWith("@hotmail.com") && !email.endsWith("@gmail.com")) {
+      alert("Invalid email domain. Please use '@hotmail.com' or '@gmail.com'");
+      return;
+    }
+
+    // If all validations pass, redirect to the welcome page
+    window.location.href = "welcome.html";
+  }
+</script>
+</body>
+</html>
